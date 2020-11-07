@@ -104,3 +104,8 @@ D:\airfi-automation\AirfiAutomationProject\bin\Debug\netcoreapp3.1\runtimes\win\
 D:\airfi-automation\AirfiAutomationProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\airfi-automation\AirfiAutomationProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\airfi-automation\AirfiAutomationProject\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+D:\airfi-automation\AirfiAutomationProject\bin\Debug\netcoreapp3.1\AirfiAutomationProject.pdb
+D:\airfi-automation\AirfiAutomationProject\bin\Debug\netcoreapp3.1\SeleniumExtras.WaitHelpers.dll
+D:\airfi-automation\AirfiAutomationProject\obj\Debug\netcoreapp3.1\AirfiAutomationProject.dll
+D:\airfi-automation\AirfiAutomationProject\obj\Debug\netcoreapp3.1\AirfiAutomationProject.pdb
+D:\airfi-automation\AirfiAutomationProject\obj\Debug\netcoreapp3.1\AirfiAutomationProject.csproj.CoreCompileInputs.cache
