@@ -35,10 +35,14 @@ namespace Tests
              * Verify search result
              */
             Pages.Home.AssertAddComputerBtn();
-            string added_comp = Pages.Home.AddComputerItem();
+            string[] added_comp_details = Pages.Home.AddComputerItem();
             Pages.Home.AssertSuccessAddComputer();
-            Pages.Home.EnterSearchText(added_comp);
-            Pages.Home.AssertSearchResult(added_comp);
+            Pages.Home.EnterSearchText(added_comp_details[0]);
+            string[] new_comp =  Pages.Home.AssertSearchResult(added_comp_details[0]);
+            string[] edit_comp_details = Pages.Home.EditComputerItem(added_comp_details);
+            Pages.Home.EnterSearchText(edit_comp_details[0]);
+            Pages.Home.AssertSearchResult(edit_comp_details[0]);
+            Pages.Home.AssertEditedComputerDetails(new_comp);
         }
     }
 }
