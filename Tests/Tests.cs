@@ -4,21 +4,21 @@ namespace Tests
     [TestFixture]
     public class TestSuite : TestBase
     {
-        [Test]
+        /*[Test]
         public void TestSearchComputers()
         {
-            /*Scenario:
+            *//*Scenario:
              * Access test site
              * Verify site title
              * Search a computer (Default: Amiga)
              * Click Filter button
              * Verify search result
-             */
+             *//*
             Pages.Home.IsAt();
             string computer = "Amiga";
             Pages.Home.EnterSearchText(computer);
             Pages.Home.AssertSearchResult(computer);
-        }
+        }*/
 
         [Test]
         public void TestCRUDFunctions()
