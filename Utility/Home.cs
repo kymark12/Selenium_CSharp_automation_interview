@@ -57,6 +57,34 @@ namespace Tests
             return full_path;
         }
 
+        public void FillTextFields(string[] comp_details)
+        {
+            IList<IWebElement> text_fields = driver.FindElements(By.TagName("input"));
+            int field_count = text_fields.Count;
+            if (field_count == 4)
+            {
+                field_count = field_count - 1;
+            }
+            else
+            {
+                field_count = field_count - 2;
+            }
+            for (int i = 0; i < field_count; i++)
+            {
+                text_fields[i].Clear();
+                text_fields[i].SendKeys(comp_details[i]);
+            }
+        }
+
+        public void SelectCompany()
+        {
+            IList<IWebElement> options = CompanySelection.FindElements(By.TagName("option"));
+            string[] items = {"IBM", "OMRON", "Apple Inc.", "ASUS" };
+            int itemNum = RandomNumberGenerator(items.Length);
+            var selectElement = new SelectElement(CompanySelection);
+            selectElement.SelectByText(items[itemNum]);
+        }
+
         public void IsAt()
         {
             Assert.IsTrue(driver.Title.Equals("Computers database"));
@@ -125,17 +153,8 @@ namespace Tests
             // Action commands by steps stated on the doc string above
             AddComputerBtn.Click();
             Assert.AreEqual("Add a computer", HeaderLabel.Text, "Incorrect page");
-            IList<IWebElement> text_fields = driver.FindElements(By.TagName("input"));
-            for (int i = 0; i < text_fields.Count - 1; i++)
-            {
-                text_fields[i].Clear();
-                text_fields[i].SendKeys(add_comp_details[i]);
-            }
-            IList<IWebElement> options = CompanySelection.FindElements(By.TagName("option"));
-            int selectItems = options.Count;
-            int itemNum = RandomNumberGenerator(selectItems);
-            var selectElement = new SelectElement(CompanySelection);
-            selectElement.SelectByIndex(itemNum);
+            FillTextFields(add_comp_details);
+            SelectCompany();
             CreateButton.Click();
             return add_comp_details;
         }
@@ -161,17 +180,8 @@ namespace Tests
             // Action commands by steps stated on the doc string above
             added_comp.Click();
             Assert.AreEqual("Edit computer", HeaderLabel.Text, "Incorrect page");
-            IList<IWebElement> text_fields = driver.FindElements(By.TagName("input"));
-            for (int i = 0; i < text_fields.Count - 2; i++)
-            {
-                text_fields[i].Clear();
-                text_fields[i].SendKeys(edit_comp_details[i]);
-            }
-            IList<IWebElement> options = CompanySelection.FindElements(By.TagName("option"));
-            int selectItems = options.Count;
-            int itemNum = RandomNumberGenerator(selectItems);
-            var selectElement = new SelectElement(CompanySelection);
-            selectElement.SelectByIndex(itemNum);
+            FillTextFields(edit_comp_details);
+            SelectCompany();
             CreateButton.Click();
             return edit_comp_details;
         }
