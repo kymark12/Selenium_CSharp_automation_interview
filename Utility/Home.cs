@@ -4,8 +4,6 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 
 namespace Tests
 {
