@@ -38,6 +38,9 @@ namespace Tests
         [FindsBy(How = How.CssSelector, Using = "input.btn.primary")]
         private IWebElement CreateButton { get; set; }
 
+        [FindsBy(How = How.CssSelector, Using = "input.btn.danger")]
+        private IWebElement DeleteButton { get; set; }
+
         [FindsBy(How = How.CssSelector, Using = "div.warning")]
         private IWebElement SuccessMessage { get; set; }
 
@@ -115,13 +118,13 @@ namespace Tests
               5. Click "Create this computer" button
             */
 
-            //Data assembly
+            // Data assembly for the actions below
             int randomModelNumber, randomMonth;
             randomModelNumber = RandomNumberGenerator(3001);
             randomMonth = RandomNumberGenerator(13);
-            string[] add_comp_details = { "BFG "+ randomModelNumber, "1993-" + randomMonth + "-10", "2020-03-20"};        
+            string[] add_comp_details = { "BFG "+ randomModelNumber, "1993-" + randomMonth + "-10", "2020-03-20"};
 
-            //Action commands
+            // Action commands by steps stated on the doc string above
             AddComputerBtn.Click();
             Assert.AreEqual("Add a computer", HeaderLabel.Text, "Incorrect page");
             IList<IWebElement> text_fields = driver.FindElements(By.TagName("input"));
@@ -149,7 +152,7 @@ namespace Tests
              * 5. Compare the changes from the details before
              */
 
-            // Same procedure on add computer method this follows AAA test design
+            // Data assembly for the actions below
             int randomModelNumber, randomMonth;
             string init_path = TableXpath();
             randomModelNumber = RandomNumberGenerator(5001);
@@ -157,7 +160,7 @@ namespace Tests
             string[] edit_comp_details = { "FOG " + randomModelNumber, "1985-" + randomMonth + "-10", "2020-03-20" };
             IWebElement added_comp = driver.FindElement(By.XPath(init_path + "//a[contains(., '" + AddedCompDetails[0] + "')]"));
 
-            // Action commandss
+            // Action commands by steps stated on the doc string above
             added_comp.Click();
             Assert.AreEqual("Edit computer", HeaderLabel.Text, "Incorrect page");
             IList<IWebElement> text_fields = driver.FindElements(By.TagName("input"));
@@ -173,6 +176,24 @@ namespace Tests
             selectElement.SelectByIndex(itemNum);
             CreateButton.Click();
             return edit_comp_details;
+        }
+
+        public void DeleteComputer(string computer)
+        {
+            /*Delete the created/edited computer Page Object Method (POM):
+             * 1. Access the recently added/edited computer
+             * 2. Click the Delete button
+             * 3. Verify computer deletion
+             */
+
+            // Data assembly for the actions below
+            string init_path = TableXpath();
+            IWebElement comp = driver.FindElement(By.XPath(init_path + "//a[contains(., '" + computer + "')]"));
+
+            // Action commands by steps stated on the doc string above
+            comp.Click();
+            DeleteButton.Click();
+            Assert.AreEqual("Done! Computer has been deleted", SuccessMessage.Text, "Delete was not successful");
         }
 
     }

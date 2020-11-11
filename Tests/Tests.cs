@@ -43,6 +43,7 @@ namespace Tests
             Pages.Home.EnterSearchText(edit_comp_details[0]);
             Pages.Home.AssertSearchResult(edit_comp_details[0]);
             Pages.Home.AssertEditedComputerDetails(new_comp);
+            Pages.Home.DeleteComputer(edit_comp_details[0]);
         }
     }
 }
