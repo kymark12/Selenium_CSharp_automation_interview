@@ -1,4 +1,4 @@
-# Airfi Automation Test
+# C# Automation Test Project
 This test project is powered by C#, .NET Core 3.1, and NUnit.
  * NUnit is a unit testing framework for C# and can also be used to facilitate and assemble Selenium tests
 # Getting Started
