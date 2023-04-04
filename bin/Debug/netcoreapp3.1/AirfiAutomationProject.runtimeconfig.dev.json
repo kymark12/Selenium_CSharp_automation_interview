@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\iberb\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\iberb\\.nuget\\packages"
+      "/Users/kymark/.dotnet/store/|arch|/|tfm|",
+      "/Users/kymark/.nuget/packages"
     ]
   }
 }

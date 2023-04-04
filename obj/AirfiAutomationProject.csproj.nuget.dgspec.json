@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\airfi-automation\\AirfiAutomationProject\\AirfiAutomationProject.csproj": {}
+    "/Users/kymark/Desktop/Personal files/Selenium_CSharp_automation_project/AirfiAutomationProject.csproj": {}
   },
   "projects": {
-    "D:\\airfi-automation\\AirfiAutomationProject\\AirfiAutomationProject.csproj": {
+    "/Users/kymark/Desktop/Personal files/Selenium_CSharp_automation_project/AirfiAutomationProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\airfi-automation\\AirfiAutomationProject\\AirfiAutomationProject.csproj",
+        "projectUniqueName": "/Users/kymark/Desktop/Personal files/Selenium_CSharp_automation_project/AirfiAutomationProject.csproj",
         "projectName": "AirfiAutomationProject",
-        "projectPath": "D:\\airfi-automation\\AirfiAutomationProject\\AirfiAutomationProject.csproj",
-        "packagesPath": "C:\\Users\\iberb\\.nuget\\packages\\",
-        "outputPath": "D:\\airfi-automation\\AirfiAutomationProject\\obj\\",
+        "projectPath": "/Users/kymark/Desktop/Personal files/Selenium_CSharp_automation_project/AirfiAutomationProject.csproj",
+        "packagesPath": "/Users/kymark/.nuget/packages/",
+        "outputPath": "/Users/kymark/Desktop/Personal files/Selenium_CSharp_automation_project/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\iberb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kymark/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "DotNetSeleniumExtras.PageObjects": {
               "target": "Package",
@@ -93,16 +93,27 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

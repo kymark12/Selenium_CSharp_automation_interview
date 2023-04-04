@@ -7,7 +7,7 @@ namespace Tests
     {
         private IWebDriver webDriver;
         private string baseURL = "http://computer-database.herokuapp.com/computers";
-        private string browser = "Firefox"; 
+        private string browser = "Chrome"; 
         public void Init()
         {
             switch (browser)
